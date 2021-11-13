@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="splash">
+    <h1 class="fade-in">Welcome to IP Info Web App!</h1>
+</div>
+
+<div class="container-box">
+    <h2>Enter a valid IP Address</h2>
+    <form action="{{url_for('home')}}" method="post">
+
+    <div class="form">
+        <input type="text" name="search" placeholder="x.x.x.x" id="ip-add">
+        <input type="submit" value="Search">
+    </div>
+    </form>
+
+    <div class="info">
+        <h4>Current Details</h4>
+        <p class="deets">IP Address: {{ip.ip}}</p>
+        <p class="deets">Location: {{ip.city}}</p>
+        <p class="deets">Country: {{ip.country}}</p>
+    </div>
+</div>
+
+<script src="static/app.js"></script>
+
+{% endblock %}
